@@ -39,6 +39,14 @@ for(int i = 0; i < count; i++){
      remainder = sum % (max_int + 1);
      sum = quotient + remainder;
      complement = max_int - sum;
+  
+   fprintf(stdout, "Stored Checksum: %d, Computed Checksum: %d\n", checksum, complement);
+  if (checksum != complement ) {
+    fprintf(stderr, "Error Detected!\n"); 
+    return 1;
+  }
+  return 0;
+}
 }
   /* the following is the prototype for the read system call */
   /* int read(int fildes, void *buf, size_t nbyte);  */
